@@ -1,14 +1,14 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { 
-  Calculator, 
-  FileText, 
-  Building, 
-  TrendingUp, 
-  Shield, 
+import {
+  Calculator,
+  FileText,
+  Building,
+  TrendingUp,
+  Shield,
   Briefcase,
   PieChart,
-  Users
+  Users,
 } from "lucide-react";
 
 const ServicesSection = () => {
@@ -16,51 +16,101 @@ const ServicesSection = () => {
     {
       icon: Calculator,
       title: "Audit & Assurance",
-      description: "Comprehensive audit services including statutory, internal, stock, and tax audits.",
-      features: ["Statutory Audit", "Internal Audit", "Stock Audit", "Tax Audit", "Bank Audit"]
+      description:
+        "Comprehensive audit services including statutory, internal, stock, and tax audits.",
+      features: [
+        "Statutory Audit",
+        "Internal Audit",
+        "Stock Audit",
+        "Tax Audit",
+        "Bank Audit",
+      ],
     },
     {
       icon: FileText,
       title: "Taxation Services",
-      description: "Complete tax solutions for individuals and businesses across all tax categories.",
-      features: ["Income Tax", "GST Services", "TDS/TCS", "International Tax", "Tax Planning"]
+      description:
+        "Complete tax solutions for individuals and businesses across all tax categories.",
+      features: [
+        "Income Tax",
+        "GST Services",
+        "TDS/TCS",
+        "International Tax",
+        "Tax Planning",
+      ],
     },
     {
       icon: Building,
       title: "Corporate Services",
-      description: "End-to-end corporate compliance and registration services for all business types.",
-      features: ["Company Registration", "LLP Formation", "ROC Compliance", "Annual Filings"]
+      description:
+        "End-to-end corporate compliance and registration services for all business types.",
+      features: [
+        "Company Registration",
+        "LLP Formation",
+        "ROC Compliance",
+        "Annual Filings",
+      ],
     },
     {
       icon: TrendingUp,
       title: "Financial Planning",
-      description: "Strategic financial advisory services to optimize your business performance.",
-      features: ["Budget Planning", "Cash Flow Analysis", "Investment Advisory", "Risk Assessment"]
+      description:
+        "Strategic financial advisory services to optimize your business performance.",
+      features: [
+        "Budget Planning",
+        "Cash Flow Analysis",
+        "Investment Advisory",
+        "Risk Assessment",
+      ],
     },
     {
       icon: Shield,
       title: "Compliance Management",
-      description: "Ensure regulatory compliance across all business operations and requirements.",
-      features: ["FEMA Compliance", "Labour Law", "Environmental Clearance", "Legal Documentation"]
+      description:
+        "Ensure regulatory compliance across all business operations and requirements.",
+      features: [
+        "FEMA Compliance",
+        "Labour Law",
+        "Environmental Clearance",
+        "Legal Documentation",
+      ],
     },
     {
       icon: Briefcase,
       title: "Business Advisory",
-      description: "Strategic business consulting to drive growth and operational efficiency.",
-      features: ["Business Valuation", "Due Diligence", "Restructuring", "Merger & Acquisition"]
+      description:
+        "Strategic business consulting to drive growth and operational efficiency.",
+      features: [
+        "Business Valuation",
+        "Due Diligence",
+        "Restructuring",
+        "Merger & Acquisition",
+      ],
     },
     {
       icon: PieChart,
       title: "Accounting & Bookkeeping",
-      description: "Comprehensive accounting solutions using modern technology and best practices.",
-      features: ["Monthly Bookkeeping", "MIS Reports", "Payroll Processing", "Inventory Management"]
+      description:
+        "Comprehensive accounting solutions using modern technology and best practices.",
+      features: [
+        "Monthly Bookkeeping",
+        "MIS Reports",
+        "Payroll Processing",
+        "Inventory Management",
+      ],
     },
     {
       icon: Users,
       title: "Startup Services",
-      description: "Specialized services for startups and emerging businesses to accelerate growth.",
-      features: ["Startup Registration", "Funding Assistance", "Pitch Deck Preparation", "Compliance Setup"]
-    }
+      description:
+        "Specialized services for startups and emerging businesses to accelerate growth.",
+      features: [
+        "Startup Registration",
+        "Funding Assistance",
+        "Pitch Deck Preparation",
+        "Compliance Setup",
+      ],
+    },
   ];
 
   return (
@@ -72,8 +122,8 @@ const ServicesSection = () => {
           </h2>
           <div className="w-24 h-1 bg-primary mx-auto mb-6"></div>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            We offer a complete range of chartered accounting services designed to meet 
-            all your financial and business requirements under one roof.
+            We offer a complete range of chartered accounting services designed
+            to meet all your financial and business requirements under one roof.
           </p>
         </div>
 
@@ -81,8 +131,8 @@ const ServicesSection = () => {
           {services.map((service, index) => {
             const IconComponent = service.icon;
             return (
-              <Card 
-                key={index} 
+              <Card
+                key={index}
                 className="group hover:shadow-elegant hover:transform hover:scale-105 transition-all duration-300 border-0 bg-gradient-card"
               >
                 <CardHeader className="text-center pb-4">
@@ -99,13 +149,20 @@ const ServicesSection = () => {
                   </p>
                   <ul className="text-sm text-muted-foreground space-y-1 mb-6">
                     {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center justify-center">
+                      <li
+                        key={idx}
+                        className="flex items-center justify-center"
+                      >
                         <span className="w-1 h-1 bg-primary rounded-full mr-2"></span>
                         {feature}
                       </li>
                     ))}
                   </ul>
-                  <Button variant="outline" size="sm" className="group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="group-hover:bg-primary group-hover:text-white transition-all duration-300"
+                  >
                     Learn More
                   </Button>
                 </CardContent>

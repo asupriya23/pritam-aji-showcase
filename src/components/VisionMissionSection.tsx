@@ -3,7 +3,7 @@ import { Target, Eye, Zap } from "lucide-react";
 
 const VisionMissionSection = () => {
   return (
-    <section className="py-20 bg-secondary/30">
+    <section id="purpose-vision-mission" className="py-20 bg-secondary/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-foreground mb-4">
@@ -11,9 +11,10 @@ const VisionMissionSection = () => {
           </h2>
           <div className="w-24 h-1 bg-primary mx-auto mb-6"></div>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Instituting Incremental Model of Process development driven by Advisory oriented 
-            Chartered accountants to deliver best quality services which accelerates Client's business 
-            growth through state of art accounting Technologies
+            Instituting Incremental Model of Process development driven by
+            Advisory oriented Chartered accountants to deliver best quality
+            services which accelerates Client's business growth through state of
+            art accounting Technologies
           </p>
         </div>
 
@@ -38,8 +39,9 @@ const VisionMissionSection = () => {
               </div>
               <h3 className="text-2xl font-bold mb-4">Purpose</h3>
               <p className="text-white/90 leading-relaxed">
-                To build wealth with integrity and innovation, helping our clients achieve 
-                financial success through expert guidance and reliable accounting solutions.
+                To build wealth with integrity and innovation, helping our
+                clients achieve financial success through expert guidance and
+                reliable accounting solutions.
               </p>
             </CardContent>
           </Card>
@@ -52,8 +54,9 @@ const VisionMissionSection = () => {
               </div>
               <h3 className="text-2xl font-bold mb-4">Vision</h3>
               <p className="text-white/90 leading-relaxed">
-                To be the leading, most organized, and trusted chartered accounting firm, 
-                setting new standards in financial excellence and client satisfaction.
+                To be the leading, most organized, and trusted chartered
+                accounting firm, setting new standards in financial excellence
+                and client satisfaction.
               </p>
             </CardContent>
           </Card>
@@ -66,8 +69,9 @@ const VisionMissionSection = () => {
               </div>
               <h3 className="text-2xl font-bold mb-4">Mission</h3>
               <p className="text-white/90 leading-relaxed">
-                Delivering impactful solutions through innovative accounting practices, 
-                ensuring compliance, and fostering business growth for all our valued clients.
+                Delivering impactful solutions through innovative accounting
+                practices, ensuring compliance, and fostering business growth
+                for all our valued clients.
               </p>
             </CardContent>
           </Card>

@@ -12,6 +12,12 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { ChevronDown, Phone, MapPin } from "lucide-react";
 
+const handleScroll = (id) => {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+};
 const Header = () => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
@@ -31,10 +37,18 @@ const Header = () => {
             </div>
           </div>
           <div className="flex gap-4">
-            <Button variant="outline" size="sm" className="border-white/20 text-white hover:bg-white/10">
+            <Button
+              variant="outline"
+              size="sm"
+              className="border-white/20 text-white hover:bg-white/10"
+            >
               Client Login
             </Button>
-            <Button variant="outline" size="sm" className="border-white/20 text-white hover:bg-white/10">
+            <Button
+              variant="outline"
+              size="sm"
+              className="border-white/20 text-white hover:bg-white/10"
+            >
               Payment Portal
             </Button>
           </div>
@@ -50,7 +64,7 @@ const Header = () => {
               <span className="font-bold text-xl">P.A.</span>
             </div>
             <div>
-              <h1 className="text-xl font-bold">Pritam Aji & Company</h1>
+              <h1 className="text-xl font-bold">Pritam Ajit & Company</h1>
               <p className="text-sm opacity-90">Chartered Accountants</p>
             </div>
           </div>
@@ -63,24 +77,43 @@ const Header = () => {
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="text-white hover:bg-white/10">
+                <Button
+                  variant="ghost"
+                  className="text-white hover:bg-white/10"
+                >
                   ABOUT US <ChevronDown className="ml-1 h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-56 bg-white shadow-lg">
-                <DropdownMenuItem className="hover:bg-primary/10">
+                {/* Changed from <a> tag with href to onSelect */}
+                <DropdownMenuItem
+                  className="hover:bg-primary/10"
+                  onSelect={() => handleScroll("our-company")}
+                >
                   Our Company
                 </DropdownMenuItem>
-                <DropdownMenuItem className="hover:bg-primary/10">
+                <DropdownMenuItem
+                  className="hover:bg-primary/10"
+                  onSelect={() => handleScroll("purpose-vision-mission")}
+                >
                   Purpose, Vision & Mission
                 </DropdownMenuItem>
-                <DropdownMenuItem className="hover:bg-primary/10">
+                <DropdownMenuItem
+                  className="hover:bg-primary/10"
+                  onSelect={() => handleScroll("our-team")}
+                >
                   Our Team
                 </DropdownMenuItem>
-                <DropdownMenuItem className="hover:bg-primary/10">
+                <DropdownMenuItem
+                  className="hover:bg-primary/10"
+                  onSelect={() => handleScroll("milestones")}
+                >
                   Milestones
                 </DropdownMenuItem>
-                <DropdownMenuItem className="hover:bg-primary/10">
+                <DropdownMenuItem
+                  className="hover:bg-primary/10"
+                  onSelect={() => handleScroll("affiliations")}
+                >
                   Affiliations
                 </DropdownMenuItem>
               </DropdownMenuContent>
@@ -88,7 +121,10 @@ const Header = () => {
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="text-white hover:bg-white/10">
+                <Button
+                  variant="ghost"
+                  className="text-white hover:bg-white/10"
+                >
                   SERVICES <ChevronDown className="ml-1 h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
@@ -104,7 +140,7 @@ const Header = () => {
                     <DropdownMenuItem>Tax Audit</DropdownMenuItem>
                   </DropdownMenuSubContent>
                 </DropdownMenuSub>
-                
+
                 <DropdownMenuSub>
                   <DropdownMenuSubTrigger className="hover:bg-primary/10">
                     Taxation Services
@@ -124,13 +160,15 @@ const Header = () => {
                   <DropdownMenuSubContent>
                     <DropdownMenuItem>Company Registration</DropdownMenuItem>
                     <DropdownMenuItem>LLP Formation</DropdownMenuItem>
-                    <DropdownMenuItem>Partnership Registration</DropdownMenuItem>
+                    <DropdownMenuItem>
+                      Partnership Registration
+                    </DropdownMenuItem>
                     <DropdownMenuItem>ROC Compliance</DropdownMenuItem>
                   </DropdownMenuSubContent>
                 </DropdownMenuSub>
 
                 <DropdownMenuSeparator />
-                
+
                 <DropdownMenuItem className="hover:bg-primary/10">
                   Accounting & Bookkeeping
                 </DropdownMenuItem>
@@ -145,7 +183,10 @@ const Header = () => {
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="text-white hover:bg-white/10">
+                <Button
+                  variant="ghost"
+                  className="text-white hover:bg-white/10"
+                >
                   INDUSTRIES <ChevronDown className="ml-1 h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
@@ -176,7 +217,10 @@ const Header = () => {
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="text-white hover:bg-white/10">
+                <Button
+                  variant="ghost"
+                  className="text-white hover:bg-white/10"
+                >
                   RESOURCES <ChevronDown className="ml-1 h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>

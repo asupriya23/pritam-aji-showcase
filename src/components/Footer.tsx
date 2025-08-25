@@ -1,14 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { 
-  MapPin, 
-  Phone, 
-  Mail, 
-  Facebook, 
-  Twitter, 
-  Linkedin, 
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Facebook,
+  Twitter,
+  Linkedin,
   Instagram,
-  Youtube
+  Youtube,
 } from "lucide-react";
 
 const Footer = () => {
@@ -23,29 +23,50 @@ const Footer = () => {
                 <span className="font-bold text-xl">P.A.</span>
               </div>
               <div>
-                <h3 className="text-xl font-bold">Pritam Aji & Company</h3>
+                <h3 className="text-xl font-bold">Pritam Ajit & Company</h3>
                 <p className="text-sm opacity-90">Chartered Accountants</p>
               </div>
             </div>
             <p className="text-gray-300 leading-relaxed">
-              Pritam Aji & Co is a leading CA firm providing comprehensive accounting and 
-              business advisory services. We offer reliable chartered accountants who deliver 
-              excellence with integrity across various industries.
+              Pritam Ajit & Co is a leading CA firm providing comprehensive
+              accounting and business advisory services. We offer reliable
+              chartered accountants who deliver excellence with integrity across
+              various industries.
             </p>
             <div className="flex space-x-4">
-              <Button size="sm" variant="outline" className="border-white/20 text-white hover:bg-white/10 p-2">
+              <Button
+                size="sm"
+                variant="outline"
+                className="border-white/20 text-white hover:bg-white/10 p-2"
+              >
                 <Facebook className="h-4 w-4" />
               </Button>
-              <Button size="sm" variant="outline" className="border-white/20 text-white hover:bg-white/10 p-2">
+              <Button
+                size="sm"
+                variant="outline"
+                className="border-white/20 text-white hover:bg-white/10 p-2"
+              >
                 <Twitter className="h-4 w-4" />
               </Button>
-              <Button size="sm" variant="outline" className="border-white/20 text-white hover:bg-white/10 p-2">
+              <Button
+                size="sm"
+                variant="outline"
+                className="border-white/20 text-white hover:bg-white/10 p-2"
+              >
                 <Linkedin className="h-4 w-4" />
               </Button>
-              <Button size="sm" variant="outline" className="border-white/20 text-white hover:bg-white/10 p-2">
+              <Button
+                size="sm"
+                variant="outline"
+                className="border-white/20 text-white hover:bg-white/10 p-2"
+              >
                 <Instagram className="h-4 w-4" />
               </Button>
-              <Button size="sm" variant="outline" className="border-white/20 text-white hover:bg-white/10 p-2">
+              <Button
+                size="sm"
+                variant="outline"
+                className="border-white/20 text-white hover:bg-white/10 p-2"
+              >
                 <Youtube className="h-4 w-4" />
               </Button>
             </div>
@@ -83,7 +104,7 @@ const Footer = () => {
             <h4 className="text-lg font-semibold text-primary">CONTACT US</h4>
             <div className="space-y-4">
               <div>
-                <p className="text-white font-medium">Pritam Aji</p>
+                <p className="text-white font-medium">Pritam Ajit</p>
                 <p className="text-gray-300 text-sm">Managing Partner</p>
               </div>
               <div className="flex items-center space-x-2">
@@ -122,13 +143,25 @@ const Footer = () => {
             <div className="space-y-3">
               <h5 className="font-medium text-white">Quick Services:</h5>
               <div className="flex flex-wrap gap-2">
-                <Button variant="outline" size="sm" className="border-white/20 text-white hover:bg-white/10 text-xs">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-white/20 text-white hover:bg-white/10 text-xs"
+                >
                   GST Filing
                 </Button>
-                <Button variant="outline" size="sm" className="border-white/20 text-white hover:bg-white/10 text-xs">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-white/20 text-white hover:bg-white/10 text-xs"
+                >
                   ITR Filing
                 </Button>
-                <Button variant="outline" size="sm" className="border-white/20 text-white hover:bg-white/10 text-xs">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-white/20 text-white hover:bg-white/10 text-xs"
+                >
                   Company Registration
                 </Button>
               </div>
@@ -144,16 +177,28 @@ const Footer = () => {
             © 2024 Pritam Aji & Company. All rights reserved.
           </div>
           <div className="flex space-x-6 text-sm">
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">
+            <a
+              href="#"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
               Privacy Policy
             </a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">
+            <a
+              href="#"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
               Terms of Service
             </a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">
+            <a
+              href="#"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
               Disclaimer
             </a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">
+            <a
+              href="#"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
               Sitemap
             </a>
           </div>
