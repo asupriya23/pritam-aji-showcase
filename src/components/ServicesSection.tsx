@@ -21,9 +21,9 @@ const ServicesSection = () => {
       features: [
         "Statutory Audit",
         "Internal Audit",
-        "Stock Audit",
-        "Tax Audit",
-        "Bank Audit",
+        " IND AS",
+        "Public Sector Audit",
+        "Company Secretrial Services",
       ],
     },
     {
@@ -32,47 +32,38 @@ const ServicesSection = () => {
       description:
         "Complete tax solutions for individuals and businesses across all tax categories.",
       features: [
-        "Income Tax",
-        "GST Services",
-        "TDS/TCS",
-        "International Tax",
-        "Tax Planning",
+        "Tax Consulting Services",
+        "Tax Audit",
+        "Income Tax Advisory",
+        "NRI Taxation",
+        "Easy IT Filing",
       ],
     },
     {
       icon: Building,
-      title: "Corporate Services",
+      title: "Transfer Pricing",
       description:
         "End-to-end corporate compliance and registration services for all business types.",
-      features: [
-        "Company Registration",
-        "LLP Formation",
-        "ROC Compliance",
-        "Annual Filings",
-      ],
+      features: ["International Taxation ", "Transfer Pricing"],
     },
     {
       icon: TrendingUp,
-      title: "Financial Planning",
+      title: "GST",
       description:
         "Strategic financial advisory services to optimize your business performance.",
-      features: [
-        "Budget Planning",
-        "Cash Flow Analysis",
-        "Investment Advisory",
-        "Risk Assessment",
-      ],
+      features: ["GST Registration", "GST Audit", "GST Services"],
     },
     {
       icon: Shield,
-      title: "Compliance Management",
+      title: "Outsourcing",
       description:
         "Ensure regulatory compliance across all business operations and requirements.",
       features: [
-        "FEMA Compliance",
-        "Labour Law",
-        "Environmental Clearance",
-        "Legal Documentation",
+        " Accounting Outsourcing",
+        "SEZ Services",
+        "Payroll Services",
+        "SPTI & Non-SPTI Services",
+        "Due Diligence",
       ],
     },
     {
@@ -82,21 +73,20 @@ const ServicesSection = () => {
         "Strategic business consulting to drive growth and operational efficiency.",
       features: [
         "Business Valuation",
-        "Due Diligence",
-        "Restructuring",
-        "Merger & Acquisition",
+        "Captial Gain Advisory",
+        "RERA Consultants",
       ],
     },
     {
       icon: PieChart,
-      title: "Accounting & Bookkeeping",
+      title: "Management Consulting",
       description:
         "Comprehensive accounting solutions using modern technology and best practices.",
       features: [
-        "Monthly Bookkeeping",
-        "MIS Reports",
-        "Payroll Processing",
-        "Inventory Management",
+        "Joint Development",
+        "Labour Law Consultancy",
+        "Energy Sector Services",
+        "Fixed Asset Verification",
       ],
     },
     {
@@ -106,15 +96,20 @@ const ServicesSection = () => {
         "Specialized services for startups and emerging businesses to accelerate growth.",
       features: [
         "Startup Registration",
-        "Funding Assistance",
-        "Pitch Deck Preparation",
-        "Compliance Setup",
+        "Buisness Set Up",
+        "Startup Funding",
+        "Partnership",
+        "Limited Liability Partnership",
+        "Trust",
+        "Society",
+        "Private Limited Company",
       ],
     },
   ];
 
   return (
-    <section className="py-20 bg-background">
+    // In ServicesSection.jsx
+    <section id="our-services" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-foreground mb-4">
@@ -169,12 +164,6 @@ const ServicesSection = () => {
               </Card>
             );
           })}
-        </div>
-
-        <div className="text-center mt-12">
-          <Button size="lg" className="bg-primary hover:bg-primary/90">
-            View All Services
-          </Button>
         </div>
       </div>
     </section>

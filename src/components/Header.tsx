@@ -1,7 +1,6 @@
 import { useState } from "react";
-
 import { Button } from "@/components/ui/button";
-
+import { Link } from "react-router-dom";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -24,7 +23,7 @@ const handleClick = (id) => {
     console.warn(`Element with ID "${id}" not found.`);
   }
 };
-
+console.log("nkil");
 const Header = () => {
   // We will use this state to control which dropdown is open
 
@@ -50,23 +49,7 @@ const Header = () => {
             </div>
           </div>
 
-          <div className="flex gap-4">
-            <Button
-              variant="outline"
-              size="sm"
-              className="border-white/20 text-white hover:bg-white/10"
-            >
-              Client Login
-            </Button>
-
-            <Button
-              variant="outline"
-              size="sm"
-              className="border-white/20 text-white hover:bg-white/10"
-            >
-              Payment Portal
-            </Button>
-          </div>
+          <div className="flex gap-4"></div>
         </div>
       </div>
 
@@ -91,8 +74,12 @@ const Header = () => {
           {/* Navigation Menu */}
 
           <nav className="flex items-center space-x-1">
-            <Button variant="ghost" className="text-white hover:bg-white/10">
-              HOME
+            <Button
+              variant="ghost"
+              className="text-white hover:bg-white/10"
+              asChild
+            >
+              <Link to="/">HOME</Link>
             </Button>
 
             <DropdownMenu
@@ -146,13 +133,13 @@ const Header = () => {
 
                 <DropdownMenuItem
                   className="hover:bg-primary/10"
-                  onSelect={(e) => {
-                    e.preventDefault();
-                    handleClick("milestones");
+                  onSelect={() => {
+                    // The 'e' is no longer needed
+                    handleClick("our-services"); // <-- FIXED: Use the new lowercase ID.
                     setTimeout(() => setActiveDropdown(null), 600);
                   }}
                 >
-                  Milestones
+                  Our Services
                 </DropdownMenuItem>
 
                 <DropdownMenuItem
@@ -167,7 +154,48 @@ const Header = () => {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
+            <DropdownMenu
+              open={activeDropdown === "market-entry"}
+              onOpenChange={(isOpen) =>
+                setActiveDropdown(isOpen ? "market-entry" : null)
+              }
+            >
+              <DropdownMenuTrigger asChild>
+                <Button
+                  variant="ghost"
+                  className="text-white hover:bg-white/10"
+                >
+                  INDIA MARKET ENTRY <ChevronDown className="ml-1 h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
 
+              <DropdownMenuContent className="w-64 bg-white shadow-lg">
+                {/* 👇 THIS IS THE UPDATED ITEM 👇 */}
+                <DropdownMenuItem className="hover:bg-primary/10 p-0" asChild>
+                  <Link
+                    to="/india-entry-strategy"
+                    className="px-2 py-1.5 w-full"
+                  >
+                    India Entry Strategy
+                  </Link>
+                </DropdownMenuItem>
+
+                {/* You can do the same for the other items when you create their pages */}
+                <DropdownMenuItem className="hover:bg-primary/10 p-0" asChild>
+                  <Link
+                    to="/wholly-owned-subsidiary"
+                    className="px-2 py-1.5 w-full"
+                  >
+                    Wholly Owned Subsidiary (WOS)
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="p-0" asChild>
+                  <Link to="/branch-office" className="px-2 py-1.5 w-full">
+                    Branch Office (BO)
+                  </Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
             <DropdownMenu>
               <DropdownMenuTrigger>
                 <Button
@@ -185,13 +213,45 @@ const Header = () => {
                   </DropdownMenuSubTrigger>
 
                   <DropdownMenuSubContent>
-                    <DropdownMenuItem>Statutory Audit</DropdownMenuItem>
+                    <DropdownMenuItem className="p-0" asChild>
+                      <Link
+                        to="/statutory-audit"
+                        className="px-2 py-1.5 w-full"
+                      >
+                        Statutory Audit
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem className="p-0" asChild>
+                      <Link to="/internal-audit" className="px-2 py-1-5 w-full">
+                        Internal Audit
+                      </Link>
+                    </DropdownMenuItem>
 
-                    <DropdownMenuItem>Internal Audit</DropdownMenuItem>
+                    <DropdownMenuItem className="p-0" asChild>
+                      <Link
+                        to="/ind-as-advisory"
+                        className="px-2 py-1.5 w-full"
+                      >
+                        IND AS Advisory
+                      </Link>
+                    </DropdownMenuItem>
 
-                    <DropdownMenuItem>Stock Audit</DropdownMenuItem>
-
-                    <DropdownMenuItem>Tax Audit</DropdownMenuItem>
+                    <DropdownMenuItem className="p-0" asChild>
+                      <Link
+                        to="/public-sector-audit"
+                        className="px-2 py-1.5 w-full"
+                      >
+                        Public Sector Audit
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem className="p-0" asChild>
+                      <Link
+                        to="/company-secretarial-services"
+                        className="px-2 py-1.5 w-full"
+                      >
+                        Company Secretarial Services
+                      </Link>
+                    </DropdownMenuItem>
                   </DropdownMenuSubContent>
                 </DropdownMenuSub>
 
@@ -201,121 +261,145 @@ const Header = () => {
                   </DropdownMenuSubTrigger>
 
                   <DropdownMenuSubContent>
-                    <DropdownMenuItem>Income Tax</DropdownMenuItem>
+                    <DropdownMenuItem className="p-0" asChild>
+                      <Link to="/tax-audit" className="px-2 py-1-5 w-full">
+                        Tax Audit
+                      </Link>
+                    </DropdownMenuItem>
 
-                    <DropdownMenuItem>GST Services</DropdownMenuItem>
+                    <DropdownMenuItem className="p-0" asChild>
+                      <Link
+                        to="/income-tax-advisory"
+                        className="px-2 py-1-5 w-full"
+                      >
+                        Income Tax Advisory
+                      </Link>
+                    </DropdownMenuItem>
 
-                    <DropdownMenuItem>TDS/TCS</DropdownMenuItem>
-
-                    <DropdownMenuItem>International Taxation</DropdownMenuItem>
+                    <DropdownMenuItem className="p-0" asChild>
+                      <Link to="/easy-it-filing" className="px-2 py-1-5 w-full">
+                        Easy IT Filing
+                      </Link>
+                    </DropdownMenuItem>
                   </DropdownMenuSubContent>
                 </DropdownMenuSub>
 
                 <DropdownMenuSub>
                   <DropdownMenuSubTrigger className="hover:bg-primary/10">
-                    Corporate Services
+                    Transfer Pricing
                   </DropdownMenuSubTrigger>
 
                   <DropdownMenuSubContent>
-                    <DropdownMenuItem>Company Registration</DropdownMenuItem>
-
-                    <DropdownMenuItem>LLP Formation</DropdownMenuItem>
-
-                    <DropdownMenuItem>
-                      Partnership Registration
+                    <DropdownMenuItem className="p-0" asChild>
+                      <Link
+                        to="/international-taxation"
+                        className="px-2 py-1-5 w-full"
+                      >
+                        International Taxation
+                      </Link>
                     </DropdownMenuItem>
 
-                    <DropdownMenuItem>ROC Compliance</DropdownMenuItem>
+                    <DropdownMenuItem className="p-0" asChild>
+                      <Link
+                        to="/transfer-pricing"
+                        className="px-2 py-1.5 w-full"
+                      >
+                        Transfer Pricing
+                      </Link>
+                    </DropdownMenuItem>
                   </DropdownMenuSubContent>
                 </DropdownMenuSub>
 
-                <DropdownMenuSeparator />
+                <DropdownMenuSub>
+                  <DropdownMenuSubTrigger className="hover:bg-primary/10">
+                    GST
+                  </DropdownMenuSubTrigger>
 
-                <DropdownMenuItem className="hover:bg-primary/10">
-                  Accounting & Bookkeeping
-                </DropdownMenuItem>
+                  <DropdownMenuSubContent>
+                    <DropdownMenuItem className="p-0" asChild>
+                      <Link
+                        to="/gst-registration"
+                        className="px-2 py-1.5 w-full"
+                      >
+                        GST Registration
+                      </Link>
+                    </DropdownMenuItem>
 
-                <DropdownMenuItem className="hover:bg-primary/10">
-                  Financial Planning
-                </DropdownMenuItem>
+                    <DropdownMenuItem className="p-0" asChild>
+                      <Link to="/gst-audit" className="px-2 py-1-5 w-full">
+                        GST Audit
+                      </Link>
+                    </DropdownMenuItem>
+                  </DropdownMenuSubContent>
+                </DropdownMenuSub>
 
-                <DropdownMenuItem className="hover:bg-primary/10">
-                  Business Valuation
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+                <DropdownMenuSub>
+                  <DropdownMenuSubTrigger className="hover:bg-primary/10">
+                    Outsourcing
+                  </DropdownMenuSubTrigger>
 
-            <DropdownMenu>
-              <DropdownMenuTrigger>
-                <Button
-                  variant="ghost"
-                  className="text-white hover:bg-white/10"
-                >
-                  INDUSTRIES <ChevronDown className="ml-1 h-4 w-4" />
-                </Button>
-              </DropdownMenuTrigger>
+                  <DropdownMenuSubContent>
+                    <DropdownMenuItem>Accounting Outsourcing </DropdownMenuItem>
 
-              <DropdownMenuContent className="w-56 bg-white shadow-lg">
-                <DropdownMenuItem className="hover:bg-primary/10">
-                  Manufacturing
-                </DropdownMenuItem>
+                    <DropdownMenuItem>SEZ Services</DropdownMenuItem>
+                    <DropdownMenuItem>Payroll Services</DropdownMenuItem>
+                    <DropdownMenuItem>
+                      SPTI & Non-SPTI Services
+                    </DropdownMenuItem>
+                    <DropdownMenuItem>Due Diligence </DropdownMenuItem>
+                  </DropdownMenuSubContent>
+                </DropdownMenuSub>
 
-                <DropdownMenuItem className="hover:bg-primary/10">
-                  Information Technology
-                </DropdownMenuItem>
+                <DropdownMenuSub>
+                  <DropdownMenuSubTrigger className="hover:bg-primary/10">
+                    Business Advisory
+                  </DropdownMenuSubTrigger>
 
-                <DropdownMenuItem className="hover:bg-primary/10">
-                  Real Estate
-                </DropdownMenuItem>
+                  <DropdownMenuSubContent>
+                    <DropdownMenuItem>Business Valuation</DropdownMenuItem>
 
-                <DropdownMenuItem className="hover:bg-primary/10">
-                  Healthcare
-                </DropdownMenuItem>
+                    <DropdownMenuItem>Captial Gain Advisory</DropdownMenuItem>
+                    <DropdownMenuItem>RERA Consultants</DropdownMenuItem>
+                  </DropdownMenuSubContent>
+                </DropdownMenuSub>
 
-                <DropdownMenuItem className="hover:bg-primary/10">
-                  Retail & E-commerce
-                </DropdownMenuItem>
+                <DropdownMenuSub>
+                  <DropdownMenuSubTrigger className="hover:bg-primary/10">
+                    Management Consulting
+                  </DropdownMenuSubTrigger>
 
-                <DropdownMenuItem className="hover:bg-primary/10">
-                  Financial Services
-                </DropdownMenuItem>
+                  <DropdownMenuSubContent>
+                    <DropdownMenuItem>Joint Development</DropdownMenuItem>
 
-                <DropdownMenuItem className="hover:bg-primary/10">
-                  Education
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+                    <DropdownMenuItem>Labour Law Consultancy</DropdownMenuItem>
+                    <DropdownMenuItem>Energy Sector Services</DropdownMenuItem>
+                    <DropdownMenuItem>
+                      Fixed Asset Verification
+                    </DropdownMenuItem>
+                  </DropdownMenuSubContent>
+                </DropdownMenuSub>
 
-            <DropdownMenu>
-              <DropdownMenuTrigger>
-                <Button
-                  variant="ghost"
-                  className="text-white hover:bg-white/10"
-                >
-                  RESOURCES <ChevronDown className="ml-1 h-4 w-4" />
-                </Button>
-              </DropdownMenuTrigger>
+                <DropdownMenuSub>
+                  <DropdownMenuSubTrigger className="hover:bg-primary/10">
+                    Startup Services
+                  </DropdownMenuSubTrigger>
 
-              <DropdownMenuContent className="w-56 bg-white shadow-lg">
-                <DropdownMenuItem className="hover:bg-primary/10">
-                  News & Updates
-                </DropdownMenuItem>
+                  <DropdownMenuSubContent>
+                    <DropdownMenuItem>Startup Registration</DropdownMenuItem>
 
-                <DropdownMenuItem className="hover:bg-primary/10">
-                  Tax Calculator
-                </DropdownMenuItem>
+                    <DropdownMenuItem>Buisness Set Up</DropdownMenuItem>
+                    <DropdownMenuItem>Startup Funding</DropdownMenuItem>
+                    <DropdownMenuItem>Partnership</DropdownMenuItem>
+                    <DropdownMenuItem>
+                      Limited Liability Partnership
+                    </DropdownMenuItem>
 
-                <DropdownMenuItem className="hover:bg-primary/10">
-                  Downloads
-                </DropdownMenuItem>
+                    <DropdownMenuItem>Trust</DropdownMenuItem>
 
-                <DropdownMenuItem className="hover:bg-primary/10">
-                  FAQ
-                </DropdownMenuItem>
-
-                <DropdownMenuItem className="hover:bg-primary/10">
-                  Client Testimonials
-                </DropdownMenuItem>
+                    <DropdownMenuItem>Society</DropdownMenuItem>
+                    <DropdownMenuItem>Private Limited Company</DropdownMenuItem>
+                  </DropdownMenuSubContent>
+                </DropdownMenuSub>
               </DropdownMenuContent>
             </DropdownMenu>
 

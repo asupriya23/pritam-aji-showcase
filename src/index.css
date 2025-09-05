@@ -8,6 +8,11 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
+    
+  /* ... your other color variables ... */
+  --ca-light-blue: 204 100% 95%; /* This is a light sky blue in HSL format */
+
+
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 
